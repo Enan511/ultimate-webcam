@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Block all external internet connections - USB loopback only -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors />
+    </base-config>
+</network-security-config>

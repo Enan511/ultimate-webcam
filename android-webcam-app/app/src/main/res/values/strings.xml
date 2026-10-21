@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UWebcam</string>
+    <string name="full_app_name">Ultimate Webcam</string>
+    <string name="service_notification_title">Ultimate Webcam Active</string>
+    <string name="service_notification_text">Streaming camera feed securely over USB to PC...</string>
+    <string name="notification_channel_name">Ultimate Webcam Streaming Service</string>
+</resources>

@@ -1,0 +1,6 @@
+{
+  "default": "ultimate-webcam-icon.svg",
+  "bg_color": "#0e130c",
+  "android_fg": "ultimate-webcam-adaptive.svg",
+  "android_fg_scale": 100
+}

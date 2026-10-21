@@ -1,0 +1,42 @@
+# Private/local context
+/Codex/
+/Handover/
+/.antigravity/
+/artifacts/
+/releases/
+*.log
+*.dmp
+# Generated files and dependency installs
+**/node_modules/
+**/target/
+**/dist/
+**/build/
+**/.gradle/
+**/.kotlin/
+**/.idea/
+**/gen/schemas/
+.vscode/
+*.tsbuildinfo
+# Local configuration and secrets
+**/local.properties
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+key.properties
+keystore.properties
+adbkey*
+# Distributable binaries belong in Releases
+*.exe
+*.dll
+*.apk
+*.aab
+*.zip
+*.pdb
+*.h264
+/third-party-licenses/

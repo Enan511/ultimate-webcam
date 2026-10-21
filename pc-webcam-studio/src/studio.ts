@@ -1,0 +1,11 @@
+import { invoke } from "@tauri-apps/api/core";
+export type Device = {serial:string;model_name:string;authorized:boolean};
+export type Mode = {width:number;height:number;fps:number};
+export type Lens = {id:string;name:string;lensFacing:string;hasFlash:boolean;modes:Mode[];zoomRange:{min:number;max:number};exposureRange?:{min:number;max:number}};
+export type Phone = {transport?:string;autoOrientation?:boolean;rotationDegrees?:number;isStreaming:boolean;isClientConnected:boolean;activeCameraId:string;width:number;height:number;fps:number;bitrateMbps:number;bytesTransmitted:number;isAudioActive:boolean;torchEnabled:boolean;zoomRatio:number;exposureCompensation:number;error?:string};
+export type Status = {gpuError?:string;phase:string;message:string;serial:string|null;frames:number;decodeErrors:number;bytes:number;fps:number;width:number;height:number;filterMs:number;estimatedLatencyMs?:number;clockUncertaintyMs?:number;virtualCameraActive:boolean;manifest:{model:string;manufacturer:string;cameras:Lens[];maxSupportedBitrate:number}|null;phone:Phone|null};
+export const idle:Status={phase:"idle",message:"Connect your phone to get started",serial:null,frames:0,decodeErrors:0,bytes:0,fps:0,width:0,height:0,filterMs:0,virtualCameraActive:false,manifest:null,phone:null};
+export type Filters={brightness:number;contrast:number;saturation:number;warmth:number;sharpness:number;vignette:number;lut_preset:number;mirror_h:number;flip_v:number;rotation:number;zoom_crop:number;width:number;height:number;_pad0:number;_pad1:number;_pad2:number};
+export const defaults:Filters={brightness:0,contrast:1,saturation:1,warmth:0,sharpness:0,vignette:0,lut_preset:0,mirror_h:0,flip_v:0,rotation:0,zoom_crop:1,width:1920,height:1080,_pad0:0,_pad1:0,_pad2:0};
+export const command = <T,>(name:string,args?:Record<string,unknown>)=>invoke<T>(name,args);
+export const formatBytes=(n:number)=>n>1024**3?(n/1024**3).toFixed(1)+" GB":(n/1024**2).toFixed(1)+" MB";
